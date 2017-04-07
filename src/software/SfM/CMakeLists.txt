@@ -312,6 +312,17 @@ TARGET_LINK_LIBRARIES(openMVG_main_openMVG2MVSTEXTURING
   stlplus
   )
 
+# - Export a SfM openMVG scene to Matlab
+#
+ADD_EXECUTABLE(openMVG_main_openMVG2Matlab main_openMVG2Matlab.cpp)
+TARGET_LINK_LIBRARIES(openMVG_main_openMVG2Matlab
+  openMVG_system
+  openMVG_image
+  openMVG_features
+  openMVG_sfm
+  stlplus
+  )
+
 # - Export SfM openMVG camera scene as triangle meshes
 # -
 ADD_EXECUTABLE(openMVG_main_ExportCameraFrustums main_ExportCameraFrustums.cpp)
@@ -333,6 +344,8 @@ SET_PROPERTY(TARGET openMVG_main_openMVG2MESHLAB PROPERTY FOLDER OpenMVG/softwar
 INSTALL(TARGETS openMVG_main_openMVG2MESHLAB DESTINATION bin/)
 SET_PROPERTY(TARGET openMVG_main_openMVG2MVSTEXTURING PROPERTY FOLDER OpenMVG/software)
 INSTALL(TARGETS openMVG_main_openMVG2MVSTEXTURING DESTINATION bin/)
+SET_PROPERTY(TARGET openMVG_main_openMVG2Matlab PROPERTY FOLDER OpenMVG/software)
+INSTALL(TARGETS openMVG_main_openMVG2Matlab DESTINATION bin/)
 SET_PROPERTY(TARGET openMVG_main_openMVG2MVE2 PROPERTY FOLDER OpenMVG/software)
 INSTALL(TARGETS openMVG_main_openMVG2MVE2 DESTINATION bin/)
 SET_PROPERTY(TARGET openMVG_main_ExportCameraFrustums PROPERTY FOLDER OpenMVG/software)
